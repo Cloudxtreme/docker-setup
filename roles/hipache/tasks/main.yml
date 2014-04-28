@@ -1,0 +1,6 @@
+---
+- name: run hipache service
+  docker:
+    image="hipache"
+    ports="80:80"
+    name="hipache"

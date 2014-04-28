@@ -1,0 +1,7 @@
+---
+- name: run skydns service
+  docker:
+    command="-nameserver 8.8.8.8:53 -domain local"
+    image="crosbymichael/skydns"
+    ports="0.0.0.0:53:53/udp"
+    name="skydns"

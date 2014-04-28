@@ -1,0 +1,8 @@
+---
+- name: run skydock service
+  docker:
+    command="-ttl 30 -environment dev -s /docker.sock -domain local"
+    image="crosbymichael/skydock"
+    name="skydock"
+    links="skydns:skydns"
+    volumes="/var/run/docker.sock:docker.sock"

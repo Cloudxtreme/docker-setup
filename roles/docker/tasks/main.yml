@@ -8,6 +8,7 @@
     - linux-image-extra-{{ linux_kernel }}
     - git
     - python-pycurl
+    - python-pip
   notify: service docker start/enable
   tags:
     - aptget
@@ -25,6 +26,9 @@
   notify: service docker start/enable
   tags:
     - installdocker
+
+- name: install the docker-py module
+  action: pip name=docker-py
 
 - name: add ubuntu user to the docker group
   action: user
