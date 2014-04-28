@@ -25,3 +25,10 @@
   notify: service docker start/enable
   tags:
     - installdocker
+
+- name: add ubuntu user to the docker group
+  action: user
+          append=yes
+          name=ubuntu
+          groups=docker
+          state=present
