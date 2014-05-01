@@ -1,0 +1,8 @@
+---
+- hosts: all
+  roles:
+    - role: docker
+    - role: skydns
+    - role: skydock
+    - role: hipache
+    - role: security
